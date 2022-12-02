@@ -1,5 +1,5 @@
 jobs:
-- job: JK Titled Job
+- job: JKTitledJob
   pool:
     vmImage: 'ubuntu-latest'
   steps:
