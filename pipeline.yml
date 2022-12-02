@@ -1,7 +1,19 @@
-pool:
-  vmImage: 'ubuntu-latest'
+parameters:
+- name: image
+  displayName: Pool Image
+  type: string
+  default: ubuntu-latest
+  values:
+  - windows-latest
+  - ubuntu-latest
+  - macOS-latest
 
-container: ubuntu:18.04
+trigger: none
 
-steps:
-- script: printenv
+jobs:
+- job: build
+  displayName: build
+  pool: 
+    vmImage: ${{ parameters.image }}
+  steps:
+  - script: echo building $(Build.BuildNumber) with ${{ parameters.image }}
