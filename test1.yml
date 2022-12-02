@@ -1,5 +1,6 @@
-job:
-- pool:
+jobs:
+- job: JK Titled Job
+  pool:
     vmImage: 'ubuntu-latest'
-- steps:
+  steps:
   - bash: echo "JK - New sample pipeline"
